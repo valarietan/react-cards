@@ -16,12 +16,19 @@ export default function Home() {
   const deleteCard = (index) => {
     const newCards = cards.filter((_, i) => i !== index);
     setCards(newCards);
-  }
+  }; 
+
+  const editCard = (index, updatedCard) => {
+    const updatedCards = [...cards];
+    updatedCards[index] = updatedCard;
+    setCards(updatedCards);
+  };
+
   return (
     <div>
       <h1>Cards Against Negativity</h1>
       <CardForm addCard={addCard} />
-      <CardList cards={cards} deleteCard={deleteCard} />
+      <CardList cards={cards} deleteCard={deleteCard} editCard={editCard}/>
     </div>
   );
 }
