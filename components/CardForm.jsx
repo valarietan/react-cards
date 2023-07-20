@@ -10,11 +10,12 @@ export default function CardForm( {addCard} ) {
     setCard('');
   };
 
+  return(
   <form onSubmit={handleSubmit}>
       <input
         type="text"
-        value={task}
-        onChange={(e) => setTask(e.target.value)}
+        value={card}
+        onChange={(e) => setCard(e.target.value)}
         placeholder="Add a new card..."
       />
       <button type="submit">Add</button>
