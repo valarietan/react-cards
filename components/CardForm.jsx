@@ -41,7 +41,7 @@ export default function CardForm( {addCard} ) {
         onChange={(e) => setCard(e.target.value)}
         placeholder="Add a new card..."
       />
-      <button type="submit">Add</button>
+      <button type="submit">Add card</button>
     </FormWrapper>
   );
 }
