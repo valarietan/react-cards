@@ -1,8 +1,22 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import {useState} from 'react'
+import React, {useState} from 'react'
 import CardForm from '@/components/CardForm'
 import CardList from '@/components/CardList'
+import styled from 'styled-components'
+
+
+const AppWrapper = styled.div`
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  margin-bottom: 20px;
+`;
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,10 +39,10 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <AppWrapper>
       <h1>Cards Against Negativity</h1>
       <CardForm addCard={addCard} />
       <CardList cards={cards} deleteCard={deleteCard} editCard={editCard}/>
-    </div>
+    </AppWrapper>
   );
 }
