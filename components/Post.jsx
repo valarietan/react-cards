@@ -13,20 +13,34 @@ export default function Post() {
     const [postData, setPostData] = useState([])
     const [searchTerm, setSearchTerm] = useState('')
 
+    const[originalCopy, setOriginalCopy] = useState([])
+
     const debouncedValue = useDebounce(searchTerm)
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
-        .then((json) => setPostData(json));
-    }, []) 
+        .then((json) => {   
+            setPostData(json)
+            setOriginalCody(json)
+        });
+         
+        }, []) 
+
+    useEffect(() => {
+        if(!debouncedValue){
+            setPostData(originalCopy)
+            return
+        }
+        const filteredPosts = postData.filter(post => post.title.includes
+            (debouncedValue.toLowerCase()))
+} ,     [debouncedValue])
         
     return(
         <div className='flex flex-col space-y-2'>
-            <input onInput={(e) => setSearchTerm(e.target.value)} type ="search" className="border p-2 rounded" />
-            value={searchTerm}
-            {searchTerm}
-            {debouncedValue}
+            <input onInput={(e) => setSearchTerm(e.target.value)} value={searchTerm}
+            type ="search" className="border p-2 rounded" />
+            
             {postData.map(singlePost => <PostCard key={singlePost.id} post={singlePost} />)}
         </div>
     )

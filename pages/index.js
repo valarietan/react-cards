@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <AppWrapper>
-      <h1>Cards Against Negativity</h1>
+      <Title>Cards Against Negativity</Title>
       <p>Beat self-doubt. Grow positive energy.</p>
       <CardForm addCard={addCard} />
       <CardList cards={cards} deleteCard={deleteCard} editCard={editCard}/>
