@@ -1,9 +1,5 @@
 import React, {useEffect, useState} from 'react'
 
-{
-    post: data
-}
-
 function PostCard({post}){
     return(
         <div>
@@ -17,10 +13,10 @@ export default function Post() {
     const [postData, setPostData] = useState([])
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode,com/posts')
+        fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
         .then((json) => setPostData(json));
-    }) 
+    }, []) 
         
     return(
         <div className='flex flex-col space-y-2'>

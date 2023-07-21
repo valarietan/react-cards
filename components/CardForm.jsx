@@ -39,7 +39,7 @@ export default function CardForm( {addCard} ) {
         type="text"
         value={card}
         onChange={(e) => setCard(e.target.value)}
-        placeholder="Add a card..."
+        placeholder="Type here..."
       />
       <button type="submit">Add card</button>
     </FormWrapper>
