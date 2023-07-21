@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import styled from 'styled-components'
 
 const FormWrapper = styled.form`
@@ -39,7 +39,7 @@ export default function CardForm( {addCard} ) {
         type="text"
         value={card}
         onChange={(e) => setCard(e.target.value)}
-        placeholder="Add a new card..."
+        placeholder="Add a card..."
       />
       <button type="submit">Add card</button>
     </FormWrapper>

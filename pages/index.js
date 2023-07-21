@@ -3,9 +3,8 @@ import { Inter } from 'next/font/google'
 import React, {useState} from 'react'
 import CardForm from '@/components/CardForm'
 import CardList from '@/components/CardList'
+import Post from '@/components/Post'
 import styled from 'styled-components'
-import Navbar from '@/components/Navbar'
-
 
 const AppWrapper = styled.div`
   max-width: 400px;
@@ -13,7 +12,6 @@ const AppWrapper = styled.div`
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `
-
 const Title = styled.h1`
   text-align: center;
   margin-bottom: 20px;
@@ -41,7 +39,6 @@ export default function Home() {
 
   return (
     <AppWrapper>
-      <Navbar />
       <h1>Cards Against Negativity</h1>
       <p>Beat self-doubt. Grow positive energy.</p>
       <CardForm addCard={addCard} />
