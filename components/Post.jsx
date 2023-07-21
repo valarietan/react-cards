@@ -14,17 +14,17 @@ function PostCard({post}){
 }
 
 export default function Post() {
-    const [posts, setPost] = useState([])
+    const [postData, setPostData] = useState([])
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode,com/posts')
         .then((response) => response.json())
-        .then((json) => setPosts(json));
+        .then((json) => setPostData(json));
     }) 
         
     return(
-        <div className='flex flex-col space'>
-            {post.map(post => <PostCard key={post.id} post={post} />)}
+        <div className='flex flex-col space-y-2'>
+            {postData.map(singlePost => <PostCard key={singlePost.id} post={singlePost} />)}
         </div>
     )
 }
