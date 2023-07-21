@@ -8,9 +8,16 @@ export default function Cards() {
             <title>Cards Against Negativity</title>
             <meta name="description" content="All Cards"/>
         </Head>
-    <div>C</div>
+        <div className="flex flex-col gap-4">
+        {data.map( card => (
+            <div className="p-2 border rounded">
+            <h1 className="text-2xl font-semibold">{card.title}</h1>
+            <p className="text-base text-gray-500">{card.text}</p>
+            </div>
+        ) )}
+        </div>
     </>
-)
+  )
 }
 
 export async function getServerSideProps(context) {
@@ -23,3 +30,4 @@ export async function getServerSideProps(context) {
   }
  }
 }
+
