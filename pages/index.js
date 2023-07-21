@@ -4,6 +4,7 @@ import React, {useState} from 'react'
 import CardForm from '@/components/CardForm'
 import CardList from '@/components/CardList'
 import styled from 'styled-components'
+import Navbar from '@/components/Navbar'
 
 
 const AppWrapper = styled.div`
@@ -40,6 +41,7 @@ export default function Home() {
 
   return (
     <AppWrapper>
+      <Navbar />
       <h1>Cards Against Negativity</h1>
       <p>Beat self-doubt. Grow positive energy.</p>
       <CardForm addCard={addCard} />
