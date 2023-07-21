@@ -12,3 +12,14 @@ export default function Cards() {
     </>
 )
 }
+
+export async function getServerSideProps(context) {
+ const response = await fetch(`${process.env.NEXT_API_URL}/card`)
+ const data = await response.json()
+ console.log("data", data)
+ return {
+    props: {
+      data
+  }
+ }
+}
