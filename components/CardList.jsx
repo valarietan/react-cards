@@ -31,7 +31,6 @@ const List = styled.ul`
     margin-right: 10px;
   }
   `
-
 export default function CardList({ cards, deleteCard, editCard }) { 
     const [editIndex, setEditIndex] = useState(null);
     const [editedCard, setEditedCard] = useState('');
@@ -52,7 +51,7 @@ export default function CardList({ cards, deleteCard, editCard }) {
             <li key={index}>
               {editIndex === index ? (
                 <>
-                   <input
+                <input
                 type="text"
                 value={editedCard}
                 onChange={(e) => setEditedCard(e.target.value)}
