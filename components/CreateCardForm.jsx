@@ -27,12 +27,12 @@ const CreateCardForm = ({ onSave }) => {
       <textarea 
         value={card}
         onChange={handleCardChange}
-        placeholder="Type anything..."
+        placeholder="Type the good stuff..."
         rows="7"
         cols="42"
         required
       />
-      <button className='rounded-full hover:rounded-lg' type="submit">Save card</button>
+      <button className='rounded-full hover:rounded-lg' type="submit">Save it!</button>
     </AppWrapper>
   );
 };

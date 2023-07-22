@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import CreateNoteForm from '@/components/CreateCardForm';
+import CreateCardForm from '@/components/CreateCardForm';
 
 const CreateCardPage = () => {
   const [cards, setCards] = useState([]);
@@ -15,7 +15,6 @@ const CreateCardPage = () => {
 
   return (
     <div>
-      <h1>Create a new card</h1>
       <CreateCardForm onSave={handleSaveCard} />
     </div>
   );
