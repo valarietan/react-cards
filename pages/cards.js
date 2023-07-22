@@ -5,7 +5,7 @@ export default function Cards() {
   return (
     <>
         <Head>
-            <title>Cards Against Negativity</title>
+            <title>Your Cards Against Negativity</title>
             <meta name="description" content="All Cards"/>
         </Head>
         <div className="flex flex-col gap-4">
@@ -14,7 +14,7 @@ export default function Cards() {
             <h1 className="text-2xl font-semibold">{card.title}</h1>
             <p className="text-base text-gray-500">{card.text}</p>
             </div>
-        ) )}
+        ) ) }
         </div>
     </>
   )
