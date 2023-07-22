@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const AppWrapper = styled.form`
@@ -57,7 +57,8 @@ const CreateCardForm = ({ onSave }) => {
       <TextArea
         value={card}
         onChange={handleCardChange}
-        placeholder="Type the good stuff..."
+        placeholder="Type something good..."
+        maxLength={300}
         rows="7"
         required
       />
