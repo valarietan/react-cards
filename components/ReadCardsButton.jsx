@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const ReadCardsButton = () => {
   return (
-    <Link href="/notes">
+    <Link href="/cards">
       <a>Read Cards</a>
     </Link>
   );
