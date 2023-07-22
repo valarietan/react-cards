@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import React, {useState} from 'react'
-import CardForm from '@/components/CardForm'
-import CardList from '@/components/CardList'
+import CreateCardForm from '@/components/CreateCardForm'
 import Post from '@/components/Post'
 import styled from 'styled-components'
 
@@ -41,8 +40,7 @@ export default function Home() {
     <AppWrapper>
       <Title>Cards Against Negativity</Title>
       <p>Beat self-doubt. Grow positive energy.</p>
-      <CardForm addCard={addCard} />
-      <CardList cards={cards} deleteCard={deleteCard} editCard={editCard}/>
+      <CreateCardForm addCard={addCard} />
     </AppWrapper>
   );
 }
