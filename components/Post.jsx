@@ -22,7 +22,7 @@ export default function Post() {
         .then((response) => response.json())
         .then((json) => {   
             setPostData(json)
-            setOriginalCody(json)
+            setOriginalCopy(json)
         });
          
         }, []) 
