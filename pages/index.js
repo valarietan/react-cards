@@ -3,38 +3,30 @@ import { Inter } from 'next/font/google'
 import React, {useState} from 'react'
 import CreateCardForm from '@/components/CreateCardForm'
 import Post from '@/components/Post'
-import styled from 'styled-components'
+import Link from 'next/link'
 
-const AppWrapper = styled.div`
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-`
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
-  const [cards, setCards] = useState ([]);
-
-  const addCard = (card) => {
-    setCards([...cards, card]); 
-  };
-
-  const deleteCard = (index) => {
-    const newCards = cards.filter((_, i) => i !== index);
-    setCards(newCards);
-  }; 
-
-  const editCard = (index, updatedCard) => {
-    const updatedCards = [...cards];
-    updatedCards[index] = updatedCard;
-    setCards(updatedCards);
-  };
-
+const HomePage = () => {
   return (
-    <AppWrapper>
-      <CreateCardForm addCard={addCard} />
-    </AppWrapper>
+    <div>
+      <h1>Cards Against Negativity</h1>
+      <p>Hi, so good to see you.</p>
+      <div>
+        <Link href="/createCard">
+          <a>
+            <button>Add Card</button>
+          </a>
+        </Link>
+        <Link href="/cards">
+          <a>
+            <button>Read Card</button>
+          </a>
+        </Link>
+      </div>
+    </div>
   );
-}
+};
+
+export default HomePage;

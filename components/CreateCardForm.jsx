@@ -1,4 +1,12 @@
 import { useState } from 'react';
+import styled from 'styled-components'
+
+const AppWrapper = styled.form`
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`
 
 const CreateCardForm = ({ onSave }) => {
   const [card, setCard] = useState('');
@@ -14,7 +22,7 @@ const CreateCardForm = ({ onSave }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <AppWrapper onSubmit={handleSubmit}>
     <h2 className='text-2xl'>Create a new card</h2>
       <textarea 
         value={card}
@@ -25,7 +33,7 @@ const CreateCardForm = ({ onSave }) => {
         required
       />
       <button className='rounded-full hover:rounded-lg' type="submit">Save card</button>
-    </form>
+    </AppWrapper>
   );
 };
 
