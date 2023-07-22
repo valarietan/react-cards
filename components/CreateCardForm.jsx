@@ -15,6 +15,7 @@ const CreateCardForm = ({ onSave }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+    <h2 className='text-2xl'>Create a new card</h2>
       <textarea
         value={card}
         onChange={handleCardChange}

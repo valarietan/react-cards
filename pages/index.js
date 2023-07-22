@@ -11,10 +11,6 @@ const AppWrapper = styled.div`
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `
-const Title = styled.h1`
-  text-align: center;
-  margin-bottom: 20px;
-`
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -38,8 +34,6 @@ export default function Home() {
 
   return (
     <AppWrapper>
-      <Title>Cards Against Negativity</Title>
-      <p>Beat self-doubt. Grow positive energy.</p>
       <CreateCardForm addCard={addCard} />
     </AppWrapper>
   );
