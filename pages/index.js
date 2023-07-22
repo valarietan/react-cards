@@ -55,6 +55,16 @@ const ReadButton = styled.button`
   cursor: pointer;
 `;
 
+const StyledLine = styled.div`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: #442C2E;
+`;
+
 const HomePage = () => {
   return (
     <HomePageContainer>
@@ -68,6 +78,7 @@ const HomePage = () => {
           <ReadButton>Read Card</ReadButton>
         </Link>
       </ButtonsContainer>
+      <StyledLine>Beat self-doubt. Grow positive energy.</StyledLine>
     </HomePageContainer>
   );
 };
