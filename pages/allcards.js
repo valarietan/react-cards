@@ -9,4 +9,4 @@ const CardsPage = () => {
   );
 };
 
-export default CardsPage;
+export default Page;
