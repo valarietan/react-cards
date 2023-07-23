@@ -49,7 +49,7 @@ const CreateCardForm = ({ onSave }) => {
 const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch('/api/cards', {
+        const response = await fetch('api/cards', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -74,7 +74,6 @@ const handleSubmit = async (e) => {
   if (isCardSaved) {
     return <CardSavedPage />;
   }
-
 
 return (
     <AppWrapper onSubmit={handleSubmit}>
