@@ -39,8 +39,9 @@ const SubmitButton = styled.button`
   }
 `;
 
-const CreateCardForm = ({ onSave }) => {
+const CreateCardForm = () => {
   const [card, setCard] = useState('');
+  const [isCardSaved, setIsCardSaved] =useState(false);
 
   const handleCardChange = (e) => {
     setCard(e.target.value);
@@ -49,7 +50,7 @@ const CreateCardForm = ({ onSave }) => {
 const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch('api/cards', {
+        const response = await fetch(`${process.env.NEXT_API_URL}/card`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -58,18 +59,16 @@ const handleSubmit = async (e) => {
         });
 
     if (response.ok) {
-        const data = await response.json();
-        onSave(data);
-        setIsCardSaved(true); 
+        setIsCardSaved(true);
+        setCard('') 
       } else {
-        console.error('Failed to save the card to the database.');
+        console.error('Failed to save the card.');
       }
     } catch (error) {
       console.error('Error while saving the card:', error);
     }
   };
 
-  const [isCardSaved, setIsCardSaved] = useState(false);
   
   if (isCardSaved) {
     return <CardSavedPage />;
