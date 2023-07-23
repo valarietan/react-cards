@@ -31,7 +31,12 @@ const CardLink = styled.a`
 `;
 
 const CardList = ({ cards }) => {
-const MAX_ENTRIES = 10;
+  const MAX_ENTRIES = 10;
+
+  // checks if cards prop is defined 
+  if (!cards) { 
+    return null; 
+  }
 
 return (
   <CardListContainer>

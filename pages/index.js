@@ -64,7 +64,9 @@ const StyledLine = styled.div`
   color: #442C2E;
 `;
 
-const HomePage = () => {
+const HomePage = ({data}) => {
+ const{cards} = data ?? {cards: []};
+
   return (
     <HomePageContainer>
       <Title>Cards Against Negativity</Title>
@@ -78,6 +80,7 @@ const HomePage = () => {
         </Link>
       </ButtonsContainer>
       <StyledLine>Beat self-doubt. Grow positive energy.</StyledLine>
+      <CardList cards={cards} />
     </HomePageContainer>
   );
 };
@@ -85,13 +88,13 @@ const HomePage = () => {
 export default HomePage;
 
 // Function to fetch the list of cards from the backend API
-export async function getServerSideProps() {
-  const response = await fetch('NEXT_API_URL/card}'); 
-  const data = await response.json();
-
+export async function getServerSideProps(context) {
+  const response = await fetch(`${process.env.NEXT_API_URL}/card`)
+  const data = await response.json()
+  console.log("data", data)
   return {
-    props: {
-      cards: data.cards,
-    },
+     props: {
+       data
+   },
   };
-}
+ }
