@@ -47,11 +47,26 @@ const CreateCardForm = ({ onSave }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave(card);
+    saveCardToDatabase(card);
     setCard('');
   };
 
-  return (
+
+const saveCardToDatabase = async (card) => {
+    try {
+        const response = await fetch('`${process.env.NEXT_API_URL`', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ card }),
+        });
+        const data = await response.json();
+        onSave(data);
+    }
+}
+
+return (
     <AppWrapper onSubmit={handleSubmit}>
       <Title>Create a new card</Title>
       <TextArea
@@ -67,4 +82,6 @@ const CreateCardForm = ({ onSave }) => {
   );
 };
 
+export default saveCardToDatabase;
+ 
 export default CreateCardForm;

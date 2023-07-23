@@ -1,9 +1,7 @@
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import React, {useState} from 'react'
 import CreateCardForm from '@/components/CreateCardForm'
 import ReadCardsButton from '@/components/ReadCardsButton'
-import Post from '@/components/Post'
 import Link from 'next/link'
 import styled from 'styled-components'
 
@@ -13,7 +11,7 @@ const HomePageContainer = styled.div`
   text-align: center;
   padding: 40px;
   background: #F9E4B7;
-  border-radius: 8px;
+  border-radius: 10px;
 `;
 
 const Title = styled.h1`
