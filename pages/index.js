@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import React, {useState} from 'react'
 import CreateCardForm from '@/components/CreateCardForm'
 import ReadCardsButton from '@/components/ReadCardsButton'
+import CardList from '@/components/CardList'
 import Link from 'next/link'
 import styled from 'styled-components'
 
@@ -82,3 +83,15 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+// Function to fetch the list of cards from the backend API
+export async function getServerSideProps() {
+  const response = await fetch('NEXT_API_URL/card}'); 
+  const data = await response.json();
+
+  return {
+    props: {
+      cards: data.cards,
+    },
+  };
+}
