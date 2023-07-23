@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import styled from 'styled-components';
+import React, {useState, useEffect} from 'react'
+import styled from 'styled-components'
+import CardSavedPage from '@/components/CardSaved'
 
 const AppWrapper = styled.form`
   max-width: 400px;
@@ -45,11 +46,35 @@ const CreateCardForm = ({ onSave }) => {
     setCard(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
-    saveCardToDatabase(card);
-    setCard('');
+    try {
+        const response = await fetch('/api/cards', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ card }),
+        });
+
+    if (response.ok) {
+        const data = await response.json();
+        onSave(data);
+        setIsCardSaved(true); 
+      } else {
+        console.error('Failed to save the card to the database.');
+      }
+    } catch (error) {
+      console.error('Error while saving the card:', error);
+    }
   };
+
+  const [isCardSaved, setIsCardSaved] = useState(false);
+  
+  if (isCardSaved) {
+    return <CardSavedPage />;
+  }
+
 
 return (
     <AppWrapper onSubmit={handleSubmit}>
@@ -69,22 +94,7 @@ return (
 
 export default CreateCardForm;
 
-const saveCardToDatabase = async (card) => {
-    try {
-      const response = await fetch('/api/cards', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ card }),
-      });
-      const data = await response.json();
-      
-      console.log('Card saved:', data);
-    } catch (error) {
-      console.error('Error while saving the card:', error);
-    }
-  };
+
   
   
   
