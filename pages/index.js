@@ -5,6 +5,7 @@ import CardList from '@/components/CardList'
 import ReadCardsButton from '@/components/ReadCardsButton'
 import Link from 'next/link'
 import styled from 'styled-components'
+import Cards from './cards'
 
 const inter = Inter({ subsets: ['latin'] })
 
