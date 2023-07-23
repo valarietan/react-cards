@@ -56,9 +56,7 @@ const BackButton = styled.button`
 `;
 
 export default function Cards({ data }) {
-    if (!data) {
-        return <div>Not data</div>;
-    }
+   
   return (
     <>
       <CardListContainer>
