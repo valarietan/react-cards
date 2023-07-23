@@ -38,22 +38,32 @@ const CardList = ({ cards }) => {
     return null; 
   }
 
-return (
-  <CardListContainer>
-    <CardListTitle>All Cards</CardListTitle>
-    <ul>
-      {cards.slice(0, MAX_ENTRIES).map((card) => (
-        <CardListItem key={card.id}>
-          <Link href={`/cards/${card.id}`}>
-            <CardLink>{card.content.split(' ').slice(0, 7).join(' ')}</CardLink>
-          </Link>
-        </CardListItem>
-      ))}
-    </ul>
-  </CardListContainer>
-);
+  return (
+    <CardListContainer>
+      <CardListTitle>All Cards</CardListTitle>
+      <ul>
+        {cards.slice(0, MAX_ENTRIES).map((card) => (
+          <CardListItem key={card.id}>
+            <Link href={`/cards/${card.id}`}>
+              <CardLink>{card.content.split(' ').slice(0, 7).join(' ')}</CardLink>
+            </Link>
+          </CardListItem>
+        ))}
+      </ul>
+    </CardListContainer>
+  );
 };
 
 export default CardList;
 
+export async function getServerSideProps(context) {
+  const response = await fetch(`http://127.0.0.1:8000/card`)
+  const data = await response.json()
+  console.log("data", data)
+  return {
+     props: {
+       data
+   }
+  }
+ }
 

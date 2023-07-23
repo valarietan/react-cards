@@ -1,7 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
+import CardList from '@/components/CardList'
 
-export default function Cards() {
+export default function Cards({data}){
   return (
     <>
         <Head>
