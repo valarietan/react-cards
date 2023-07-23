@@ -51,21 +51,6 @@ const CreateCardForm = ({ onSave }) => {
     setCard('');
   };
 
-
-const saveCardToDatabase = async (card) => {
-    try {
-        const response = await fetch('`${process.env.NEXT_API_URL`', {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ card }),
-        });
-        const data = await response.json();
-        onSave(data);
-    }
-}
-
 return (
     <AppWrapper onSubmit={handleSubmit}>
       <Title>Create a new card</Title>
@@ -82,6 +67,28 @@ return (
   );
 };
 
-export default saveCardToDatabase;
- 
 export default CreateCardForm;
+
+const saveCardToDatabase = async (card) => {
+    try {
+      const response = await fetch('/api/cards', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ card }),
+      });
+      const data = await response.json();
+      
+      console.log('Card saved:', data);
+    } catch (error) {
+      console.error('Error while saving the card:', error);
+    }
+  };
+  
+  
+  
+  
+  
+  
+  
