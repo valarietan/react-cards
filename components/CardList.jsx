@@ -62,7 +62,7 @@ export default function Cards({ data }) {
   return (
     <>
       <CardListContainer>
-        <CardListTitle>Power cards to fight self-doubt</CardListTitle>
+        <CardListTitle>Your Cards</CardListTitle>
         <CardListSubtitle>Click on the card to read, edit or delete</CardListSubtitle>
         {data.map((card) => (
           <CardListItem key={card.id}>
