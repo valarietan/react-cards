@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import React, {useState} from 'react'
 import CreateCardForm from '@/components/CreateCardForm'
+import CardList from '@/components/CardList'
 import ReadCardsButton from '@/components/ReadCardsButton'
 import Link from 'next/link'
 import styled from 'styled-components'
