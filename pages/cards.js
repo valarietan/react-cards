@@ -59,7 +59,7 @@ export default function Cards({ data }) {
   return (
     <>
       <CardListContainer>
-        <CardListTitle>Cards Collection</CardListTitle>
+        <CardListTitle>Your Cards Collection</CardListTitle>
         <CardListSubtitle>Click on the card to read, edit or delete</CardListSubtitle>
         {data && data.map((card) => (
           <CardListItem key={card.id}>

@@ -81,7 +81,6 @@ const HomePage = ({data}) => {
         </Link>
       </ButtonsContainer>
       <StyledLine>Beat self-doubt. Grow positive energy.</StyledLine>
-      <CardList cards={cards} />
     </HomePageContainer>
   );
 };
