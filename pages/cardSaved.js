@@ -1,4 +1,4 @@
-import CardSavedPage from '@/components/CardSaved';
+import CardSavedPage from '@/components/CardSavedPage';
 
 const CardSaved = () => {
   return <CardSavedPage />;

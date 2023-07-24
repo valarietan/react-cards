@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
-import styled from 'styled-components'
-import CardSavedPage from '@/components/CardSaved'
+import React, {useState, useEffect} from 'react';
+import styled from 'styled-components';
+import CardSavedPage from '@/components/CardSavedPage';
 
 const AppWrapper = styled.form`
   max-width: 400px;
@@ -39,28 +39,40 @@ const SubmitButton = styled.button`
   }
 `;
 
+import React, { useState, useEffect } from 'react';
+import CardSavedPage from '@/components/CardSaved';
+
 const CreateCardForm = () => {
   const [card, setCard] = useState('');
-  const [isCardSaved, setIsCardSaved] =useState(false);
+  const [isCardSaved, setIsCardSaved] = useState(false);
+
+  useEffect(() => {
+    // Check local storage if the card has been saved before
+    const savedCard = localStorage.getItem('savedCard');
+    if (savedCard) {
+      setIsCardSaved(true);
+    }
+  }, []);
 
   const handleCardChange = (e) => {
     setCard(e.target.value);
   };
 
-const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch(`${process.env.NEXT_API_URL}/card`, {
+      const response = await fetch(`${process.env.NEXT_API_URL}/card`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ card }),
-        });
+      });
 
-    if (response.ok) {
+      if (response.ok) {
+        localStorage.setItem('savedCard', true);
         setIsCardSaved(true);
-        setCard('') 
+        setCard('');
       } else {
         console.error('Failed to save the card.');
       }
@@ -69,7 +81,6 @@ const handleSubmit = async (e) => {
     }
   };
 
-  
   if (isCardSaved) {
     return <CardSavedPage />;
   }
