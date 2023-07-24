@@ -121,7 +121,7 @@ export default function Cards({ data }) {
           {currentCards.map((card)=> (
             <CardListItem key={card.id}>
             <Link href={`/cards/${card.id}`}>
-            <CardLink>{card.text.split(' ').slice(0, 10).join(' ')}</CardLink>
+            <CardLink>{card.text.split(' ').slice(0, 15).join(' ')}</CardLink>
             </Link>
           </CardListItem>
           ))}
