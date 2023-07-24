@@ -88,8 +88,8 @@ export default function Cards({ data }) {
   return (
     <>
       <CardListContainer>
-        <CardListTitle>Your Collection</CardListTitle>
-        <CardListSubtitle>Click on the card to read, edit or delete</CardListSubtitle>
+        <CardListTitle>Your Collection Against Negativity</CardListTitle>
+        <CardListSubtitle>Go ahead, click a card to read, edit or delete.</CardListSubtitle>
         <CardGrid>
           {currentCards.map((card)=> (
             <CardListItem key={card.id}>
