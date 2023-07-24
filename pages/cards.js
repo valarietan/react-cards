@@ -5,10 +5,11 @@ import styled from 'styled-components';
 
 const CardListContainer = styled.div`
   text-align: center;
+  background: papayawhip;
 `;
 
 const CardListTitle = styled.h2`
-  font-size: 24px;
+  font-size: 30px;
   margin-bottom: 20px;
   color: #442C2E;
 `;
@@ -28,7 +29,7 @@ const CardListItem = styled.div`
 
 const CardLink = styled.a`
   display: block;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
   color: #442C2E;
   text-decoration: none;
@@ -59,7 +60,7 @@ export default function Cards({ data }) {
   return (
     <>
       <CardListContainer>
-        <CardListTitle>Your Cards Collection</CardListTitle>
+        <CardListTitle>Your Collection</CardListTitle>
         <CardListSubtitle>Click on the card to read, edit or delete</CardListSubtitle>
         {data && data.map((card) => (
           <CardListItem key={card.id}>
