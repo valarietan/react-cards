@@ -39,9 +39,6 @@ const SubmitButton = styled.button`
   }
 `;
 
-import React, { useState, useEffect } from 'react';
-import CardSavedPage from '@/components/CardSaved';
-
 const CreateCardForm = () => {
   const [card, setCard] = useState('');
   const [isCardSaved, setIsCardSaved] = useState(false);
