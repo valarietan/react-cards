@@ -9,7 +9,8 @@ const CardListContainer = styled.div`
 `;
 
 const CardListTitle = styled.h2`
-  font-size: 30px;
+  font-size: 36px;
+  font-weight: bold;
   margin-bottom: 20px;
   color: #442C2E;
 `;
@@ -22,7 +23,7 @@ const CardListSubtitle = styled.p`
 
 const CardListItem = styled.div`
   margin-bottom: 8px;
-  padding: 80px;
+  padding: 75px;
   border: 3px solid #ccc;
   border-radius: 5px;
 `;
