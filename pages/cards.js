@@ -21,9 +21,9 @@ const CardListSubtitle = styled.p`
 `;
 
 const CardListItem = styled.div`
-  margin-bottom: 10px;
-  padding: 8px;
-  border: 1px solid #ccc;
+  margin-bottom: 8px;
+  padding: 80px;
+  border: 3px solid #ccc;
   border-radius: 5px;
 `;
 
