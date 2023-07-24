@@ -47,6 +47,13 @@ const CardGrid = styled.div`
   margin-bottom: 20px; /* Add some space at the bottom */
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px; /* Add some space at the top */
+`;
+
 const BackButton = styled.button`
   margin-top: 20px;
   padding: 10px 20px;
@@ -91,12 +98,14 @@ export default function Cards({ data }) {
           </CardListItem>
           ))}
         </CardGrid>
+        <ButtonContainer>
         <BackButton onClick={handleNextPage} disabled={currentPage === totalPages}>
           Next Page
         </BackButton>
         <Link href="/">
           <BackButton>Back to Homepage</BackButton>
         </Link>
+        </ButtonContainer>
       </CardListContainer>
     </>
   );
