@@ -61,7 +61,7 @@ export default function Cards({ data }) {
       <CardListContainer>
         <CardListTitle>Cards Collection</CardListTitle>
         <CardListSubtitle>Click on the card to read, edit or delete</CardListSubtitle>
-        {data.map((card) => (
+        {data && data.map((card) => (
           <CardListItem key={card.id}>
             <Link href={`/cards/${card.id}`}>
               <CardLink>{card.text.split(' ').slice(0, 7).join(' ')}</CardLink>
