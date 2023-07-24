@@ -4,36 +4,54 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const CardListContainer = styled.div`
-  text-align: center;
-  background: papayawhip;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #F9E4B7;
+  min-height: 100vh;
 `;
 
 const CardListTitle = styled.h2`
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #442C2E;
+  font-size: 30px;
+  color: #00bfff;
+  margin: 0;
 `;
 
 const CardListSubtitle = styled.p`
   font-size: 18px;
-  margin-bottom: 20px;
-  color: #442C2E;
+  color: #1e90ff;
+  margin: 0;
+`;
+
+const CardGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  justify-items: center;
 `;
 
 const CardListItem = styled.div`
-  margin-bottom: 8px;
-  padding: 75px;
+  width: 180px;
+  height: 250px;
   border: 3px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
 `;
 
 const CardLink = styled.a`
-  display: block;
-  font-size: 12px;
-  font-weight: bold;
+  text-align: left; 
+  content-align: center;
+  font-size: 14px;
   color: #442C2E;
   text-decoration: none;
+  cursor: pointer;
   transition: color 0.2s;
 
   &:hover {
@@ -41,22 +59,31 @@ const CardLink = styled.a`
   }
 `;
 
-const CardGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns */
-  grid-gap: 20px; /* Gap between cards */
-  margin-bottom: 20px; /* Add some space at the bottom */
-`;
-
-const ButtonContainer = styled.div`
+const ButtonsContainer = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center; 
   justify-content: center;
-  gap: 20px;
-  margin-top: 20px; /* Add some space at the top */
+  margin-top: 30px;
 `;
 
-const BackButton = styled.button`
-  margin-top: 20px;
+const NextButton = styled.button`
+  padding: 10px 20px;
+  background: #FBBF24;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 10px;
+
+  &:hover {
+    background-color: #F59E0B;
+  }
+`;
+
+const ReturnButton = styled.button`
   padding: 10px 20px;
   background: #FBBF24;
   border: none;
@@ -72,7 +99,7 @@ const BackButton = styled.button`
 `;
 
 export default function Cards({ data }) {
-  const cardsPerPage = 6; // Two rows (6 cards) per page
+  const cardsPerPage = 3; 
   const [currentPage, setCurrentPage] = useState(1);
   const totalCards = data.length;
   const totalPages = Math.ceil(totalCards / cardsPerPage);
@@ -87,9 +114,9 @@ export default function Cards({ data }) {
 
   return (
     <>
-      <CardListContainer>
-        <CardListTitle>Your Collection Against Negativity</CardListTitle>
-        <CardListSubtitle>Go ahead, click a card to read, edit or delete.</CardListSubtitle>
+  <CardListContainer>
+      <CardListTitle>You're awesome.</CardListTitle>
+      <CardListSubtitle>Go ahead, click a card to read, edit or delete.</CardListSubtitle>
         <CardGrid>
           {currentCards.map((card)=> (
             <CardListItem key={card.id}>
@@ -99,14 +126,14 @@ export default function Cards({ data }) {
           </CardListItem>
           ))}
         </CardGrid>
-        <ButtonContainer>
-        <BackButton onClick={handleNextPage} disabled={currentPage === totalPages}>
+        <ButtonsContainer>
+        <ReturnButton onClick={handleNextPage} disabled={currentPage === totalPages}>
           Next Page
-        </BackButton>
+        </ReturnButton>
         <Link href="/">
-          <BackButton>Back to Homepage</BackButton>
+          <ReturnButton>Back to Homepage</ReturnButton>
         </Link>
-        </ButtonContainer>
+        </ButtonsContainer>
       </CardListContainer>
     </>
   );

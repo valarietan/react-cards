@@ -20,13 +20,13 @@ const Title = styled.h1`
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #442C2E;
+  color: #00bfff;
 `;
 
 const Greeting = styled.p`
   font-size: 24px;
   margin-bottom: 30px;
-  color: #442C2E;
+  color: #1e90ff;
 `;
 
 const ButtonsContainer = styled.div`
