@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
@@ -40,6 +40,13 @@ const CardLink = styled.a`
   }
 `;
 
+const CardGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  grid-gap: 20px; /* Gap between cards */
+  margin-bottom: 20px; /* Add some space at the bottom */
+`;
+
 const BackButton = styled.button`
   margin-top: 20px;
   padding: 10px 20px;
@@ -57,18 +64,36 @@ const BackButton = styled.button`
 `;
 
 export default function Cards({ data }) {
+  const cardsPerPage = 6; // Two rows (6 cards) per page
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalCards = data.length;
+  const totalPages = Math.ceil(totalCards / cardsPerPage);
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => (prevPage < totalPages ? prevPage + 1 : prevPage));
+  };
+
+  const startIndex = (currentPage - 1) * cardsPerPage;
+  const endIndex = startIndex + cardsPerPage;
+  const currentCards = data.slice(startIndex, endIndex);
+
   return (
     <>
       <CardListContainer>
         <CardListTitle>Your Collection</CardListTitle>
         <CardListSubtitle>Click on the card to read, edit or delete</CardListSubtitle>
-        {data && data.map((card) => (
-          <CardListItem key={card.id}>
+        <CardGrid>
+          {currentCards.map((card)=> (
+            <CardListItem key={card.id}>
             <Link href={`/cards/${card.id}`}>
-              <CardLink>{card.text.split(' ').slice(0, 7).join(' ')}</CardLink>
+            <CardLink>{card.text.split(' ').slice(0, 7).join(' ')}</CardLink>
             </Link>
           </CardListItem>
-        ))}
+          ))}
+        </CardGrid>
+        <BackButton onClick={handleNextPage} disabled={currentPage === totalPages}>
+          Next Page
+        </BackButton>
         <Link href="/">
           <BackButton>Back to Homepage</BackButton>
         </Link>
