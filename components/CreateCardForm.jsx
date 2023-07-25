@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import Link from 'next/Link'; 
 import CardSavedPage from '@/components/CardSavedPage';
+
 
 const AppWrapper = styled.form`
   max-width: 400px;
@@ -80,8 +82,13 @@ const CreateCardForm = () => {
   };
 
   if (isCardSaved) {
-    return <CardSavedPage />;
-  }
+    return (
+      <Link href="card-saved">
+        <a>
+        <CardSavedPage />
+        </a>
+      </Link>
+    )  }
 
 return (
     <AppWrapper onSubmit={handleSubmit}>
