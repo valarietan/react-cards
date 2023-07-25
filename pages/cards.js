@@ -15,7 +15,7 @@ const CardListContainer = styled.div`
 
 const CardListTitle = styled.h2`
   font-size: 30px;
-  color: #00bfff;
+  color: #0000FF;
   margin: 0;
 `;
 
@@ -61,37 +61,55 @@ const CardLink = styled.a`
 
 const ButtonsContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center; 
   justify-content: center;
-  margin-top: 30px;
+  gap: 20px;
 `;
 
 const NextButton = styled.button`
-  padding: 10px 20px;
-  background: #FBBF24;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #FBBF24;
   color: white;
+  border: none;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.2s;
-  margin-bottom: 10px;
+  width: 100px; 
+  font-size: 16px; 
 
   &:hover {
     background-color: #F59E0B;
   }
 `;
 
-const ReturnButton = styled.button`
-  padding: 10px 20px;
-  background: #FBBF24;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
+const BackButton = styled.button`
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #FBBF24;
   color: white;
+  border: none;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.2s;
+  width: 100px; 
+  font-size: 16px; 
+    
+  &:hover {
+    background-color: #6c3483;
+}
+`;
+
+const ReturnButton = styled.button`
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #FBBF24;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100px; 
+  font-size: 16px; 
 
   &:hover {
     background-color: #F59E0B;
@@ -115,7 +133,7 @@ export default function Cards({ data }) {
   return (
     <>
   <CardListContainer>
-      <CardListTitle>You're awesome.</CardListTitle>
+      <CardListTitle>Your cards against insecurity</CardListTitle>
       <CardListSubtitle>Go ahead, click a card to read, edit or delete.</CardListSubtitle>
         <CardGrid>
           {currentCards.map((card)=> (
@@ -130,8 +148,9 @@ export default function Cards({ data }) {
         <ReturnButton onClick={handleNextPage} disabled={currentPage === totalPages}>
           Next Page
         </ReturnButton>
+        <BackButton onClick={() => window.history.back()}>Back</BackButton>
         <Link href="/">
-          <ReturnButton>Back to Homepage</ReturnButton>
+          <ReturnButton>Home</ReturnButton>
         </Link>
         </ButtonsContainer>
       </CardListContainer>

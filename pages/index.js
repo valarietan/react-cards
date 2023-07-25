@@ -70,7 +70,7 @@ const HomePage = ({data}) => {
 
   return (
     <HomePageContainer>
-      <Title>Cards Against Negativity</Title>
+      <Title>Cards Against Insecurity</Title>
       <Greeting>Hi, so lovely to see you here.</Greeting>
       <ButtonsContainer>
         <Link href="/createCard">
