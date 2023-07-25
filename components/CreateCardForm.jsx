@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import Link from 'next/Link'; 
+import Link from 'next/link'; 
 import CardSavedPage from '@/components/CardSavedPage';
 
 
@@ -101,7 +101,9 @@ return (
         rows="7"
         required
       />
-      <SubmitButton type="submit">Save it!</SubmitButton>
+      <Link href="/cardSaved">
+        <SubmitButton type="submit">Save it!</SubmitButton>
+      </Link>
     </AppWrapper>
   );
 };
