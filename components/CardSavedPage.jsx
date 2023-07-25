@@ -20,6 +20,12 @@ const Message = styled.p`
   color: #555;
 `;
 
+const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+`;
+
 const ReturnButton = styled.button`
   margin-top: 10px;
   padding: 8px 16px;
@@ -29,6 +35,8 @@ const ReturnButton = styled.button`
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.2s;
+  width: 100px; 
+  font-size: 16px; 
 
   &:hover {
     background-color: #F59E0B;
@@ -38,29 +46,33 @@ const ReturnButton = styled.button`
 const WriteAnotherButton = styled.button`
   margin-top: 10px;
   padding: 8px 16px;
-  background-color: #4CAF50;
+  background-color: #e9967a;
   color: white;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.2s;
+  width: 100px; 
+  font-size: 16px; 
 
   &:hover {
-    background-color: #45a049;
+    background-color: #d2691e;
   }
 `;
 const ReadCardButton = styled.button`
   margin-top: 10px;
   padding: 8px 16px;
-  background-color: #3498db;
+  background-color: #ff7f50;
   color: white;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.2s;
+  width: 100px; 
+  font-size: 16px; 
 
   &:hover {
-    background-color: #2980b9;
+    background-color: #ff8c00;
   }
 `;
 
@@ -68,16 +80,18 @@ const CardSavedPage = () => {
   return (
     <Wrapper>
       <Title>Card Saved!</Title>
-      <Message>Great job. What would you like to do next?</Message>
+      <Message>Great stuff. What would you like to do next?</Message>
+      <ButtonsContainer>
       <Link href="/">
-          <ReturnButton>Return to the homepage</ReturnButton>
+          <ReturnButton>Back to homepage</ReturnButton>
       </Link>
-      <Link href="/create">
-          <WriteAnotherButton>Write another card</WriteAnotherButton>
+      <Link href="/createCard">
+          <WriteAnotherButton>Write more</WriteAnotherButton>
         </Link>
         <Link href="/cards">
             <ReadCardButton>Read a card</ReadCardButton>
         </Link>
+      </ButtonsContainer>
     </Wrapper>
   );
 };
