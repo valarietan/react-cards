@@ -83,10 +83,8 @@ const CreateCardForm = () => {
 
   if (isCardSaved) {
     return (
-      <Link href="card-saved">
-        <a>
+      <Link href="/cardSaved">
         <CardSavedPage />
-        </a>
       </Link>
     )  }
 

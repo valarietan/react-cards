@@ -70,13 +70,13 @@ const CardSavedPage = () => {
       <Title>Card Saved!</Title>
       <Message>Great job. What would you like to do next?</Message>
       <Link href="/">
-          <ReturnButton>Return to the homepage?</ReturnButton>
+          <ReturnButton>Return to the homepage</ReturnButton>
       </Link>
       <Link href="/create">
-          <WriteAnotherButton>Write another card?</WriteAnotherButton>
+          <WriteAnotherButton>Write another card</WriteAnotherButton>
         </Link>
         <Link href="/cards">
-            <ReadCardButton>Read a card?</ReadCardButton>
+            <ReadCardButton>Read a card</ReadCardButton>
         </Link>
     </Wrapper>
   );
