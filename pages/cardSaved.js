@@ -1,4 +1,3 @@
-// pages/card-saved.js
 import React from 'react';
 import CardSavedPage from '@/components/CardSavedPage';
 
