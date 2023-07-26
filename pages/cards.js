@@ -139,7 +139,7 @@ export default function Cards({ data }) {
           {currentCards.map((card)=> (
             <CardListItem key={card.id}>
             <Link href={`/cards/${card.id}`}>
-            <CardLink>{card.text}</CardLink>
+              <CardLink>{card.text}</CardLink>
             </Link>
           </CardListItem>
           ))}
