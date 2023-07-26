@@ -85,8 +85,6 @@ const HomePage = ({data}) => {
   );
 };
 
-export default HomePage;
-
 // Function to fetch the list of cards from the backend API
 export async function getServerSideProps(context) {
   const response = await fetch(`http://127.0.0.1:8000/card`)
