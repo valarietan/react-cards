@@ -68,6 +68,8 @@ const StyledLine = styled.div`
 const HomePage = ({data}) => {
  const{cards} = data ?? {cards: []};
 
+
+
   return (
     <HomePageContainer>
       <Title>Cards Against Insecurity</Title>
@@ -84,6 +86,8 @@ const HomePage = ({data}) => {
     </HomePageContainer>
   );
 };
+
+export default HomePage;
 
 // Function to fetch the list of cards from the backend API
 export async function getServerSideProps(context) {
