@@ -45,19 +45,19 @@ const CardListItem = styled.div`
   padding: 20px;
 `;
 
-const CardLink = styled.a`
-  text-align: left; 
-  content-align: center;
-  font-size: 14px;
-  color: #442C2E;
-  text-decoration: none;
-  cursor: pointer;
-  transition: color 0.2s;
+// const CardLink = styled.a`
+//   text-align: left; 
+//   content-align: center;
+//   font-size: 14px;
+//   color: #442C2E;
+//   text-decoration: none;
+//   cursor: pointer;
+//   transition: color 0.2s;
 
-  &:hover {
-    color: #FBBF24;
-  }
-`;
+//   &:hover {
+//     color: #FBBF24;
+//   }
+// `;
 
 const ButtonsContainer = styled.div`
   display: flex;
@@ -139,7 +139,7 @@ export default function Cards({ data }) {
           {currentCards.map((card)=> (
             <CardListItem key={card.id}>
             <Link href={`/cards/${card.id}`}>
-              <CardLink>{card.text}</CardLink>
+              {card.text}
             </Link>
           </CardListItem>
           ))}
