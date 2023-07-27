@@ -46,11 +46,6 @@ const CardListItem = styled.div`
   font-size: 14px;
   text-decoration: none;
   color: #442C2E;
-  cursor: pointer;
-  transition: color 0.2s;
-  &:hover {
-    color: #FBBF24;
-  }
 `;
 
 const ButtonsContainer = styled.div`
