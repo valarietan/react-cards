@@ -45,20 +45,6 @@ const CardListItem = styled.div`
   padding: 20px;
 `;
 
-const CardLink = styled.a`
-  text-align: left; 
-  content-align: center;
-  font-size: 14px;
-  color: #442C2E;
-  text-decoration: none;
-  cursor: pointer;
-  transition: color 0.2s;
-
-  &:hover {
-    color: #FBBF24;
-  }
-`;
-
 const ButtonsContainer = styled.div`
   display: flex;
   justify-content: center;
