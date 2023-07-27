@@ -66,7 +66,7 @@ const CreateCardForm = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ card }),
+        body: JSON.stringify({ text: card }),
       });
       console.log('Checkpoint2')
 
@@ -85,8 +85,7 @@ const CreateCardForm = () => {
   };
 
   if (isCardSaved) {
-    return 
-        <CardSavedPage />
+    return <CardSavedPage />
   }
 
 return (
