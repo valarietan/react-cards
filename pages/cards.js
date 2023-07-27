@@ -110,8 +110,8 @@ export default function Cards({ data }) {
   return (
     <>
   <CardListContainer>
-      <CardListTitle>Your cards against insecurity</CardListTitle>
-      <CardListSubtitle>Go ahead, click a card to read, edit or delete.</CardListSubtitle>
+      <CardListTitle>Your deck to question negativity.</CardListTitle>
+      <CardListSubtitle>Thoughts are not facts. But these cards are.</CardListSubtitle>
         <CardGrid>
           {currentCards.map((card)=> (
             <CardListItem key={card.id}>
