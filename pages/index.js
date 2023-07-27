@@ -92,8 +92,8 @@ export async function getServerSideProps(context) {
   const data = await response.json()
   console.log("data", data)
   return {
-     props: {
-       data
-   },
+  props: {
+    data
+},
   };
- }
+}
