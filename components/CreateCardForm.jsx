@@ -91,7 +91,7 @@ return (
       <TextArea
         value={card}
         onChange={handleCardChange}
-        placeholder="Type something nice..."
+        placeholder="Type something nice about yourself..."
         maxLength={300}
         rows="7"
         required
