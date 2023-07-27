@@ -59,6 +59,7 @@ const CreateCardForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Checkpoint1')
     try {
       const response = await fetch(`http://127.0.0.1:8000/card`, {
         method: 'POST',
@@ -67,8 +68,10 @@ const CreateCardForm = () => {
         },
         body: JSON.stringify({ card }),
       });
+      console.log('Checkpoint2')
 
       if (response.ok) {
+        console.log('Checkpoint3')
         localStorage.setItem('savedCard', true);
         setIsCardSaved(true);
         setCard('');
@@ -76,6 +79,7 @@ const CreateCardForm = () => {
         console.error('Failed to save the card.');
       }
     } catch (error) {
+      console.log('Checkpoint4')
       console.error('Error while saving the card:', error);
     }
   };
