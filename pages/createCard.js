@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import CreateCardForm from '@/components/CreateCardForm';
 
+export default CreateCardPage
+
 const CreateCardPage = () => {
   const [cards, setCards] = useState([]);
 
   const handleSaveCard = (card) => {
-    // how to generate a unique ID for the new note with library like uuid?
+    // wip generate a unique ID for the new note with library like uuid
     const newCard = {
-      id: Date.now(),
       content: card,
     };
     setCards([...cards, newCard]);
@@ -20,7 +21,7 @@ const CreateCardPage = () => {
   );
 };
 
-export default CreateCardPage;
+
 
 
 

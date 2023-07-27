@@ -82,23 +82,6 @@ const NextButton = styled.button`
   }
 `;
 
-const BackButton = styled.button`
-  margin-top: 10px;
-  padding: 8px 16px;
-  background-color: #FBBF24;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  width: 100px; 
-  font-size: 16px; 
-    
-  &:hover {
-    background-color: #6c3483;
-}
-`;
-
 const ReturnButton = styled.button`
   margin-top: 10px;
   padding: 8px 16px;
@@ -149,7 +132,6 @@ export default function Cards({ data }) {
         <ReturnButton onClick={handleNextPage} disabled={currentPage === totalPages}>
           Next Page
         </ReturnButton>
-        <BackButton onClick={() => window.history.back()}>Back</BackButton>
         <Link href="/">
           <ReturnButton>Home</ReturnButton>
         </Link>
