@@ -126,7 +126,7 @@ export default function Cards({ data }) {
           Next Page
         </ReturnButton>
         <Link href="/">
-          <ReturnButton>Home</ReturnButton>
+          <ReturnButton>Return Home</ReturnButton>
         </Link>
         </ButtonsContainer>
       </CardListContainer>
