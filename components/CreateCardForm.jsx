@@ -103,7 +103,16 @@ return (
 
 export default CreateCardForm;
 
-
+export async function getServerSideProps(context) {
+  const response = await fetch(`http://127.0.0.1:8000/card`)
+  const data = await response.json()
+  console.log("data", data)
+  return {
+     props: {
+       data
+   },
+  };
+ }
   
   
   
