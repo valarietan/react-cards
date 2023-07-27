@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import CreateCardForm from '@/components/CreateCardForm';
 
-export default CreateCardPage
-
 const CreateCardPage = () => {
   const [cards, setCards] = useState([]);
 
@@ -21,6 +19,7 @@ const CreateCardPage = () => {
   );
 };
 
+export default CreateCardPage
 
 
 
