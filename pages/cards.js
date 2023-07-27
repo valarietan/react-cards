@@ -43,6 +43,14 @@ const CardListItem = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #442C2E;
+  cursor: pointer;
+  transition: color 0.2s;
+  &:hover {
+    color: #FBBF24;
+  }
 `;
 
 const ButtonsContainer = styled.div`
