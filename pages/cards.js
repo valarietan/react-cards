@@ -43,7 +43,7 @@ const CardListItem = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  font-size: 14px;
+  font-size: 11px;
   text-decoration: none;
   color: #442C2E;
 `;
@@ -106,7 +106,7 @@ export default function Cards({ data }) {
     <>
   <CardListContainer>
       <CardListTitle>Your deck to question negativity.</CardListTitle>
-      <CardListSubtitle>Thoughts are not facts. But these cards are.</CardListSubtitle>
+      <CardListSubtitle>Thoughts are not facts. These cards are.</CardListSubtitle>
         <CardGrid>
           {currentCards.map((card)=> (
             <CardListItem key={card.id}>
