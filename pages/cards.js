@@ -121,8 +121,7 @@ export default function Cards({ data }) {
         <CardGrid>
           {currentCards.map((card)=> (
             <CardListItem key={card.id}>
-            <Link href={`/cards/${card.id}`} className='text-align: left; content-align: center; font-size: 14px;color: #442C2E; cursor: pointer;
-            transition: color 0.2s; &:hover {color: #FBBF24;}'>
+            <Link href={`/cards/${card.id}`}>
               {card.text}
             </Link>
           </CardListItem>
