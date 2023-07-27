@@ -66,7 +66,7 @@ const StyledLine = styled.div`
 `;
 
 const HomePage = ({data}) => {
- const{cards} = data ?? {cards: []};
+const{cards} = data ?? {cards: []};
   return (
     <HomePageContainer>
       <Title>Cards Against Insecurity</Title>
