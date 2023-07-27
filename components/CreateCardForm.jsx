@@ -47,7 +47,6 @@ const CreateCardForm = () => {
   const [isCardSaved, setIsCardSaved] = useState(false);
 
   useEffect(() => {
-    // Check local storage if the card has been saved before
     const savedCard = localStorage.getItem('savedCard');
     if (savedCard) {
       setIsCardSaved(true);
@@ -82,11 +81,9 @@ const CreateCardForm = () => {
   };
 
   if (isCardSaved) {
-    return (
-      <Link href="/cardSaved">
+    return 
         <CardSavedPage />
-      </Link>
-    )  }
+  }
 
 return (
     <AppWrapper onSubmit={handleSubmit}>
@@ -99,9 +96,7 @@ return (
         rows="7"
         required
       />
-      <Link href="/cardSaved">
-        <SubmitButton type="submit">Save it!</SubmitButton>
-      </Link>
+      <SubmitButton type="submit">Save it!</SubmitButton>
     </AppWrapper>
   );
 };
