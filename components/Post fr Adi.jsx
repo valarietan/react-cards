@@ -24,7 +24,7 @@ export default function Post() {
             setPostData(json)
             setOriginalCopy(json)
         });
-         
+
         }, []) 
 
     useEffect(() => {
@@ -45,4 +45,3 @@ export default function Post() {
         </div>
     )
 }
-   
